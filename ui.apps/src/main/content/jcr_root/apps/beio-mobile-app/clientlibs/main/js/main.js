@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $(".seemore").click(function(){
+        $(this).toggle();
+        $(this).siblings(".seeless").toggle();
+        $(this).siblings(".text").toggleClass("showtext");
+    });
+    $(".seeless").click(function(){
+        $(this).toggle();
+        $(this).siblings(".seemore").toggle();
+        $(this).siblings(".text").toggleClass("showtext");
+    });
+});

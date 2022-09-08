@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <policy_172018897650053
+                        jcr:description="BEIO Generic Listing Policy."
+                        jcr:lastModified="{Date}2018-11-08T14:29:02.852+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BEIO Generic Listing Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/beio-mobile-app/components/content/beio-generic-listing">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_172018897650053>
+                    <policy_188283707992455
+                        jcr:description="BEIO Generic Listing Template Policy."
+                        jcr:lastModified="{Date}2018-11-08T19:01:06.142+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BEIO Generic Listing Template Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/beio-mobile-app/components/content/beio-generic-listing">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_188283707992455>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+</jcr:root>

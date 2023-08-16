@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2018-11-08T19:01:06.150+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/beio-mobile-app/settings/wcm/template-types/beio-generic-listing-template-type"
+        jcr:description="BEIO Generic Listing Template."
+        jcr:primaryType="cq:PageContent"
+        jcr:title="BEIO Generic Listing Template"
+        status="enabled"/>
+</jcr:root>

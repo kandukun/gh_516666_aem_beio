@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:SystemUser"
+    jcr:uuid="6e463c95-8779-3137-aed7-821a2073e180"
+    rep:authorizableId="beioadmin"
+    rep:principalName="beioadmin"/>

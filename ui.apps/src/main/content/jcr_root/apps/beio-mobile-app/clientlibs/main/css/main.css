@@ -1,0 +1,237 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-color: #eaeaea;
+}
+div.main-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news, .document, .link{
+    max-width: 1200px;
+    width: 100%;
+    overflow: auto;
+    margin: 2% auto;
+}
+.document, .link {
+    background: #fff;
+    padding: 1%;
+}
+div.image-container{
+   width: 20%;
+   height: auto;
+   float: left;
+    
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.description{
+    width: 80%;
+    float: left;
+    padding: 0 20px;
+    line-height: 1.4em;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+.text {
+    height: 45px;
+    overflow: hidden;
+    font-size: 16px;
+}
+.showmore-container{
+    font-size: 14px;
+}
+.desc-container{
+    position: relative;
+}
+input#ch {
+    display: none;
+}
+
+label.seemore{
+    width: 80%;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #f26522;
+    font-size: 14px;
+    font-weight: bold;
+}
+label.seeless{
+    display: none;
+    width: 80%;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #f26522;
+    font-size: 14px;
+    font-weight: bold;
+}
+.showtext{
+    height: 100%;
+}
+.type, .communication{
+    width: 80%;
+    padding-left: 2%;
+}
+.subtitle-container{
+    width: 80%;
+    padding: 0 20px;
+    float: left;
+    font-size: 18px;
+}
+.subtitle-container p {
+	margin: 0;
+	display: inline;
+}
+.subtitle-text{
+    width: 80%;
+    padding: 10px 20px;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+.date{
+    float: right;
+}
+.subtitle-text p {
+	margin: 0;
+}
+.title-container{
+    width: 80%;
+    padding: 0 20px;
+    float: left;
+    font-size: 18px;
+}
+.title-container p {
+	margin: 0;
+	display: inline;
+}
+.title-text{
+    width: 80%;
+    padding: 10px 20px;
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+}
+.title-text p {
+	margin: 0;
+}
+/*
+label.seemore:after {
+    content: "Show More";
+    float: left;
+    padding: 2px 0 0 2%;
+    cursor: pointer;
+    color: orange;
+    font-weight: bold;
+}
+input:checked ~ label.seemore:after {
+    content: "Show Less";
+}
+input:checked ~ div {
+    height: 100%;
+}
+*/
+.anchor-link-container{
+    width: 80%;
+    padding-left: 2%;
+}
+.anchor-link-container a{
+    display: block;
+    padding: 2px 0;
+}
+.anchor-link-container a:visited{
+    color: black;
+}
+.icon-container,
+.link-icon-container{
+    float: left;
+    width: 7%;
+}
+.icon-description,
+.link-icon-description{
+    float: left;
+    width: 90%;
+}
+.icon-description a:visited,
+.link-icon-description a:visited{
+    color: black;
+}
+.icon-description h3,
+.icon-description p,
+.link-icon-description h3,
+.link-icon-description p{
+    margin: 0;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+}
+.icon-description a,
+.link-icon-description a{
+    text-decoration: none;
+}
+
+.header-div{
+    max-width: 1200px;
+    background: #1C86F7;
+    margin: 0 auto;   
+}
+.header-div h1{
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+    margin: 0;
+}
+.breadcrumbs {
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+    margin: 0;
+    padding: 30px 0;
+  
+}
+    .breadcrumbs li {
+    display: inline-block;
+}
+    
+    .breadcrumb {
+    color: #666;
+    font-family: Rubik,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+.breadcrumbs :hover {
+    opacity: .9;
+}
+    .breadcrumbs li a:after {
+    color: #666;
+    content: "\003e";
+    display: inline-block;
+    font-family: Rubik,sans-serif;
+    font-weight: 400;
+    padding: 0 8px 0 10px;
+}
+
+.type-label, .communication-label{
+	font-weight: bold;
+}
+.type, .communication{
+	font-size: 15px;
+}
+.description p{
+	margin: 0px;
+} 
+.types, .communications{
+    width: 80%;
+    float: left;
+}
+.types, .communications{
+	font-size: 15px;
+	padding-left: 2%;
+}
+

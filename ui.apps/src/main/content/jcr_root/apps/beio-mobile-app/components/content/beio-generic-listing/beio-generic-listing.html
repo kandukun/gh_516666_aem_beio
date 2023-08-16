@@ -1,0 +1,366 @@
+	<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	     data-sly-call="${clientlib.all @ categories='beio-mobile-app.main'}"/>
+	<sly data-sly-use.genericListing="${'com.bms.beio.use.BEIOGenericListingUse' @ formType=properties.formtype,
+										sourcePath=properties.sourcepath, sortTag=properties.sorttag,audienceTag=properties.audience,
+										contentType=properties.action,urgentCommunication=properties.urgentcommunication,syncdate=inheritedPageProperties.fullSync}" />	 
+				<div style="text-align:center;text-transform: capitalize;"><h6> BEIO Generic Listing Component</h6></div>		
+				<div data-sly-test="${properties.formtype}" style="text-align:center;text-transform: capitalize;"><h2> ${properties.formtype} List Page</h2></div>
+	<div class="document-container">
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype == 'all'}" data-sly-list.news="${genericListing.genericListingComponentModel.htlNewsList}">
+		<span data-sly-test = ${newsList.first}><h4> News List </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${news.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${news.title @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${news.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${news.detailedContent @ context='html'}
+                 </div>
+				        <label for="seemore_${news.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${news.index}" class="seeless types">Show Less</label>
+				<div class="anchor-link-container">
+                        <a href="${news.attachmentpath}" title="${news.attachmentpath}">${news.attachmenttext @ context='html'}</a>
+                </div> 				 
+				</div>
+			</div>
+		</sly>
+	</div>
+	<div class="news-container">
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype != 'all'}"  data-sly-list.product="${genericListing.genericListingComponentModel.htlProductPromoList}">
+		<span data-sly-test = ${productList.first}><h4> Product Promo List </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${product.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${product.brandName @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${product.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${product.detailedContent @ context='html'}
+                 </div>
+				        <label for="seemore_${product.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${product.index}" class="seeless types">Show Less</label>
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${product.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${product.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${product.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${product.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${product.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${product.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${product.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${product.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!product.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${product.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!product.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+				<div class="anchor-link-container">
+                        <a href="${product.attachmentpath1}" title="${product.attachmentpath1}">${product.attachmenttext1 @ context='html'}</a>
+                        <a href="${product.attachmentpath2}" title="${product.attachmentpath2}">${product.attachmenttext2 @ context='html'}</a>
+                        <a href="${product.attachmentpath3}" title="${product.attachmentpath3}">${product.attachmenttext3 @ context='html'}</a>
+                        <a href="${product.attachmentpath4}" title="${product.attachmentpath4}">${product.attachmenttext4 @ context='html'}</a>
+                        <a href="${product.attachmentpath5}" title="${product.attachmentpath5}">${product.attachmenttext5 @ context='html'}</a>
+                    </div> 				 
+				</div>
+			</div>
+		</sly>
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype != 'all'}" data-sly-list.nonpromoproduct="${genericListing.genericListingComponentModel.htlProductNonPromoList}">
+		<span data-sly-test = ${nonpromoproductList.first}><h4> Product Non Promo List </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${nonpromoproduct.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${nonpromoproduct.compoundName @ context='html'}</span>
+					<div class="subtitle-text">
+						<span>${nonpromoproduct.subTitle @ context='html'}</span>
+					</div>
+				<div class="description text">
+                        ${nonpromoproduct.detailedContent @ context='html'}
+                </div>
+				        <label for="seemore_${nonpromoproduct.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${nonpromoproduct.index}" class="seeless types">Show Less</label>
+					
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${nonpromoproduct.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${nonpromoproduct.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${nonpromoproduct.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${nonpromoproduct.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${nonpromoproduct.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${nonpromoproduct.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${nonpromoproduct.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${nonpromoproduct.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!nonpromoproduct.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${nonpromoproduct.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!nonpromoproduct.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="anchor-link-container">
+                        <a href="${nonpromoproduct.attachmentpath1}" title="${nonpromoproduct.attachmentpath1}">${nonpromoproduct.attachmenttext1 @ context='html'}</a>
+                        <a href="${nonpromoproduct.attachmentpath2}" title="${nonpromoproduct.attachmentpath2}">${nonpromoproduct.attachmenttext2 @ context='html'}</a>
+                        <a href="${nonpromoproduct.attachmentpath3}" title="${nonpromoproduct.attachmentpath3}">${nonpromoproduct.attachmenttext3 @ context='html'}</a>
+                        <a href="${nonpromoproduct.attachmentpath4}" title="${nonpromoproduct.attachmentpath4}">${nonpromoproduct.attachmenttext4 @ context='html'}</a>
+                        <a href="${nonpromoproduct.attachmentpath5}" title="${nonpromoproduct.attachmentpath5}">${nonpromoproduct.attachmenttext5 @ context='html'}</a>
+                    </div> 				 
+				</div>
+			</div>
+		</sly>
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype == 'all'}" data-sly-list.beiopromoproduct="${genericListing.genericListingComponentModel.HTLBEIOPromoList}">
+		<span data-sly-test = ${beiopromoproductList.first}><h4> BEIO Promo List  </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${beiopromoproduct.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${beiopromoproduct.title @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${beiopromoproduct.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${beiopromoproduct.detailedContent @ context='html'}
+                </div>
+				        <label for="seemore_${beiopromoproduct.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${beiopromoproduct.index}" class="seeless types">Show Less</label>
+					
+					<div class="types"><label><span class="type-label">Type: </span><span>${beiopromoproduct.type}</span></label></div>
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${beiopromoproduct.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${beiopromoproduct.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${beiopromoproduct.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${beiopromoproduct.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${beiopromoproduct.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${beiopromoproduct.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${beiopromoproduct.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${beiopromoproduct.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!beiopromoproduct.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${beiopromoproduct.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!beiopromoproduct.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="anchor-link-container">
+                        <a href="${beiopromoproduct.attachmentpath1}" title="${beiopromoproduct.attachmentpath1}">${beiopromoproduct.attachmenttext1 @ context='html'}</a>
+                        <a href="${beiopromoproduct.attachmentpath2}" title="${beiopromoproduct.attachmentpath2}">${beiopromoproduct.attachmenttext2 @ context='html'}</a>
+                        <a href="${beiopromoproduct.attachmentpath3}" title="${beiopromoproduct.attachmentpath3}">${beiopromoproduct.attachmenttext3 @ context='html'}</a>
+                        <a href="${beiopromoproduct.attachmentpath4}" title="${beiopromoproduct.attachmentpath4}">${beiopromoproduct.attachmenttext4 @ context='html'}</a>
+                        <a href="${beiopromoproduct.attachmentpath5}" title="${beiopromoproduct.attachmentpath5}">${beiopromoproduct.attachmenttext5 @ context='html'}</a>
+                    </div> 				 
+				</div>
+			</div>
+		</sly>
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype == 'all'}"data-sly-list.beiononpromoproduct="${genericListing.genericListingComponentModel.HTLBEIONonPromoList}">
+		<span data-sly-test = ${beiononpromoproductList.first}><h4> BEIO Non Promo List  </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${beiononpromoproduct.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${beiononpromoproduct.title @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${beiononpromoproduct.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${beiononpromoproduct.detailedContent @ context='html'}
+                </div>
+				        <label for="seemore_${beiononpromoproduct.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${beiononpromoproduct.index}" class="seeless types">Show Less</label>
+					
+					<div class="types"><label><span class="type-label">Type: </span><span>${beiononpromoproduct.type}</span></label></div>
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${beiononpromoproduct.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${beiononpromoproduct.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${beiononpromoproduct.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${beiononpromoproduct.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${beiononpromoproduct.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${beiononpromoproduct.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${beiononpromoproduct.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${beiononpromoproduct.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!beiononpromoproduct.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${beiononpromoproduct.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!beiononpromoproduct.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="anchor-link-container">
+                        <a href="${beiononpromoproduct.attachmentpath1}" title="${beiononpromoproduct.attachmentpath1}">${beiononpromoproduct.attachmenttext1 @ context='html'}</a>
+                        <a href="${beiononpromoproduct.attachmentpath2}" title="${beiononpromoproduct.attachmentpath2}">${beiononpromoproduct.attachmenttext2 @ context='html'}</a>
+                        <a href="${beiononpromoproduct.attachmentpath3}" title="${beiononpromoproduct.attachmentpath3}">${beiononpromoproduct.attachmenttext3 @ context='html'}</a>
+                        <a href="${beiononpromoproduct.attachmentpath4}" title="${beiononpromoproduct.attachmentpath4}">${beiononpromoproduct.attachmenttext4 @ context='html'}</a>
+                        <a href="${beiononpromoproduct.attachmentpath5}" title="${beiononpromoproduct.attachmentpath5}">${beiononpromoproduct.attachmenttext5 @ context='html'}</a>
+                    </div> 				 
+				</div>
+			</div>
+		</sly>
+		
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype == 'all'}" data-sly-list.medinfopromoproduct="${genericListing.genericListingComponentModel.HTLMedinfoPromoList}">
+
+        <span data-sly-test = ${medinfopromoproductList.first}><h4> Medinfo Promo List  </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${medinfopromoproduct.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${medinfopromoproduct.title @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${medinfopromoproduct.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${medinfopromoproduct.detailedContent @ context='html'}
+                </div>
+				        <label for="seemore_${medinfopromoproduct.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${medinfopromoproduct.index}" class="seeless types">Show Less</label>
+					
+					<div class="types"><label><span class="type-label">Type: </span><span>${medinfopromoproduct.type}</span></label></div>
+					<div class="types"><label><span class="type-label">Keyword: </span><span>${medinfopromoproduct.keyword}</span></label></div>
+					<div class="types"><label><span class="type-label">Compound: </span><span>${medinfopromoproduct.compound}</span></label></div>
+					<div class="types"><label><span class="type-label">Category: </span><span>${medinfopromoproduct.category}</span></label></div>
+					<div class="types"><label><span class="type-label">Disclaimer: </span><span>${medinfopromoproduct.disclaimer @ context='html'}</span></label></div>
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${medinfopromoproduct.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${medinfopromoproduct.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${medinfopromoproduct.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${medinfopromoproduct.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${medinfopromoproduct.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${medinfopromoproduct.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${medinfopromoproduct.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${medinfopromoproduct.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!medinfopromoproduct.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${medinfopromoproduct.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!medinfopromoproduct.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="anchor-link-container">
+                        <a href="${medinfopromoproduct.attachmentpath1}" title="${medinfopromoproduct.attachmentpath1}">${medinfopromoproduct.attachmenttext1 @ context='html'}</a>
+                        <a href="${medinfopromoproduct.attachmentpath2}" title="${medinfopromoproduct.attachmentpath2}">${medinfopromoproduct.attachmenttext2 @ context='html'}</a>
+                  </div> 				 
+				</div>
+			</div>
+		</sly>
+		
+		<sly data-sly-test="${genericListing.genericListingComponentModel && properties.formtype == 'all'}" data-sly-list.medinfononpromoproduct="${genericListing.genericListingComponentModel.HTLMedinfoNonPromoList}">
+
+        <span data-sly-test = ${medinfononpromoproductList.first}><h4> Medinfo Non-Promo List  </h4></span>
+			<div class="news">
+				 <div class="image-container">
+                    <img src="${medinfononpromoproduct.coverimage}">
+                </div>
+				<div class="title-container">
+						<span class="title-text">${medinfononpromoproduct.title @ context='html'}</span>
+				<div class="subtitle-text">
+						<span>${medinfononpromoproduct.subTitle @ context='html'}</span>
+                </div>
+				<div class="description text">
+                        ${medinfononpromoproduct.detailedContent @ context='html'}
+                </div>
+				        <label for="seemore_${medinfononpromoproduct.index}" class="seemore types">Show More</label>
+                        <label for="seeless_${medinfononpromoproduct.index}" class="seeless types">Show Less</label>
+					
+					<div class="types"><label><span class="type-label">Type: </span><span>${medinfononpromoproduct.type}</span></label></div>
+					<div class="types"><label><span class="type-label">Keyword: </span><span>${medinfononpromoproduct.keyword}</span></label></div>
+					<div class="types"><label><span class="type-label">Compound: </span><span>${medinfononpromoproduct.compound}</span></label></div>
+					<div class="types"><label><span class="type-label">Category: </span><span>${medinfononpromoproduct.category}</span></label></div>
+					<div class="types"><label><span class="type-label">Disclaimer: </span><span>${medinfononpromoproduct.disclaimer @ context='html'}</span></label></div>
+					<div class="type"><label><span class="type-label">Roles: </span><span data-sly-list="${medinfononpromoproduct.role}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Tags: </span><span data-sly-list="${medinfononpromoproduct.tags}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>	
+					<div class="type"><label><span class="type-label">Therapeutic Area: </span><span data-sly-list="${medinfononpromoproduct.therapeuticarea}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Indication: </span><span data-sly-list="${medinfononpromoproduct.indication}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="type"><label><span class="type-label">Products: </span><span data-sly-list="${medinfononpromoproduct.products}">${item}<span data-sly-test = ${!itemList.last}>, </span></span></label></div>
+					<div class="types"><label><span class="type-label">Video ID: </span><span>${medinfononpromoproduct.videoid}</span></label></div>
+					<div class="types"><label><span class="type-label">Priority: </span><span>${medinfononpromoproduct.priority}</span></label></div>
+					<div class="communication"><label><span class="communication-label" >Downloadable:</span>
+                    		<span>
+                    			<sly data-sly-test="${medinfononpromoproduct.downloadable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!medinfononpromoproduct.downloadable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="communication"><label><span class="communication-label" >Shareable:</span>
+                    		<span>
+                    			<sly data-sly-test="${medinfononpromoproduct.Shareable}">
+                    				Yes
+                    			</sly>
+                    			<sly data-sly-test="${!medinfononpromoproduct.Shareable}">
+                    				No
+                    			</sly>
+                    		</span></label>
+                    </div>
+					<div class="anchor-link-container">
+                        <a href="${medinfononpromoproduct.attachmentpath1}" title="${medinfononpromoproduct.attachmentpath1}">${medinfononpromoproduct.attachmenttext1 @ context='html'}</a>
+                        <a href="${medinfononpromoproduct.attachmentpath2}" title="${medinfononpromoproduct.attachmentpath2}">${medinfononpromoproduct.attachmenttext2 @ context='html'}</a>
+                   </div> 				 
+				</div>
+			</div>
+		</sly>
+	</div>

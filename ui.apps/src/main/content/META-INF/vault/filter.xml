@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/beio-mobile-app"/>
+    <filter root="/conf/beio-mobile-app"/>
+	<filter root="/conf/global/settings/workflow/models/beio-push-notification"/>
+    <filter root="/var/workflow/models/beio-push-notification"/>
+	<!-- Removed during the Migration to 6.5+ and moved to /apps -->
+    <!-- filter root="/etc/clientlibs/beio-mobile-app"/-->
+	<filter root="/home/users/system/j8YvgCz4-MAQsgGh24T5"/>
+</workspaceFilter>

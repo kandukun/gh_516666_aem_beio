@@ -6,6 +6,6 @@
     damRoot="/content/dam/beio"
     pushNotificationUsername="wmbeio"
     pushNotificationPassword="beio2apigateway"
-    replicationAgents="[publish1useast1-28577355Agent,publish2useast1-28583340 Agent,publish3useast1-28583340 Agent,publish4useast1-preview-28583340 Agent]"/>
+    replicationAgents="[publish1useast1-28577355,publish2useast1-28583340,publish3useast1-28583340,publish4useast1-preview-28583340]"/>
 
     
